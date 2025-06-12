@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sinzo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: radial-gradient(circle, #fffde7 0%, #f5df4d 100%);
+      background: radial-gradient(circle at center, #fffde7 0%, #f5df4d 100%);
+      font-family: 'Times New Roman', serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       overflow: hidden;
-      font-family: 'Times New Roman', serif;
+      text-align: center;
     }
     .home-button {
       position: absolute;
@@ -29,37 +30,43 @@
       font-size: 14px;
     }
     .logo {
+      width: 360px; /* 以前の2倍サイズ */
+      max-width: 80vw;
       opacity: 0;
-      transform: scale(0.7);
       animation: logoFadeIn 3s ease forwards;
     }
     @keyframes logoFadeIn {
-      to {
+      0% {
+        opacity: 0;
+        transform: scale(0.6);
+        filter: blur(8px);
+      }
+      100% {
         opacity: 1;
         transform: scale(1);
+        filter: blur(0);
       }
     }
     .title {
-      margin-top: 20px;
-      font-size: 2.8rem;
+      font-size: 3rem;
+      margin-top: 1.5rem;
       opacity: 0;
       animation: titleFadeIn 1s ease 4s forwards;
     }
     @keyframes titleFadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
     .menu {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 16px;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
       opacity: 0;
       animation: menuFadeIn 1s ease 5.5s forwards;
-      padding: 0 10%;
-      width: 100%;
-      max-width: 400px;
+      width: 90%;
+      max-width: 800px;
     }
     .menu a {
       padding: 12px 20px;
@@ -70,7 +77,8 @@
       font-size: 1.1rem;
       box-shadow: 0 0 4px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
+      min-width: 120px;
     }
     .menu a:hover {
       transform: scale(1.05);
@@ -79,12 +87,26 @@
       to { opacity: 1; }
     }
     audio { display: none; }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 2.2rem;
+      }
+      .logo {
+        width: 180px; /* スマホ時は元のサイズに戻す */
+      }
+      .menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
   </style>
 </head>
 <body>
   <a href="/home-page/" class="home-button">Home</a>
 
-  <img src="名称未設定-35 01 アートボード 1.svg" class="logo" alt="Sinzoロゴ" style="width:120px; height:auto;">
+  <img src="名称未設定-35 01 アートボード 1.svg" class="logo" alt="Sinzoロゴ">
 
   <div class="title">Sinzo</div>
 
@@ -96,17 +118,18 @@
   </div>
 
   <audio id="heartbeatAudio">
-    <source src="heartbeat_real_fade.mp3" type="audio/mpeg">
+    <source src="heartbeat_real_slow.mp3" type="audio/mpeg">
   </audio>
   <script>
     document.addEventListener('click', () => {
       const audio = document.getElementById('heartbeatAudio');
       if (audio && audio.paused) {
+        audio.volume = 0.9;
         audio.play();
         setTimeout(() => {
           audio.pause();
           audio.currentTime = 0;
-        }, 4000);
+        }, 6000);
       }
     }, { once: true });
   </script>
