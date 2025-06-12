@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sinzo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Times New Roman", serif;
+      overflow: hidden;
+      background: #f5df4d;
+      position: relative;
+    }
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+      transform: scale(0);
+      pointer-events: none;
+      z-index: 10;
+      animation: rippleEffect 1.5s ease-out forwards;
+    }
+    @keyframes rippleEffect {
+      to {
+        transform: scale(50);
+        opacity: 0;
+      }
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo svg {
+      width: 320px;
+      max-width: 90vw;
+      height: auto;
+      opacity: 0;
+      animation: fadeIn 4s ease forwards, draw 4s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes draw {
+      0% {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 2000;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    .sinzo {
+      font-size: 48px;
+      margin-top: 40px;
+      opacity: 0;
+      animation: showText 2s ease 2.5s forwards;
+    }
+    .menu {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: showText 2s ease 3s forwards;
+    }
+    .menu a {
+      padding: 12px 20px;
+      font-size: 18px;
+      border-radius: 12px;
+      background: #fff8b0;
+      color: #333;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+    }
+    .menu a:hover {
+      background: #fff4a0;
+    }
+    @keyframes showText {
+      to { opacity: 1; }
+    }
+    svg path {
+      fill: none;
+      stroke: black;
+      stroke-width: 1.2;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: draw 4s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Adobe Illustrator 24.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="155.91px" height="155.91px" viewBox="0 0 155.91 155.91" style="enable-background:new 0 0 155.91 155.91;"
+	 xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F5DC80;}
+	.st1{fill:#F7D950;}
+	.st2{stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:#050504;}
+	.st4{fill:#060605;}
+	.st5{fill:#201F1F;}
+	.st6{fill:#DEDEDE;}
+</style>
+<g>
+	<path class="st2" d="M78.11,111.41c1.56-0.27,2.84-1.01,4.06-1.94c1.11-0.85,1.85-1.98,2.68-3.05c0.7-0.91,1.41-1.8,2.21-2.64
+		c0.96-1,1.93-2,2.86-3.02c0.74-0.81,1.4-1.67,2.07-2.52c0.84-1.06,1.62-2.2,2.26-3.39c0.64-1.19,1.33-2.39,1.75-3.68
+		c0.62-1.92,1.3-3.82,1.69-5.8c0.15-0.76,0.18-1.54,0.3-2.31c0.36-2.36,0.52-4.72,0.47-7.11c-0.03-1.53-0.29-3.03-0.48-4.55
+		c-0.13-1.05-0.26-2.1-0.51-3.14c-0.35-1.48-0.79-2.94-1.19-4.42c-0.41-1.52-1.06-2.95-1.43-4.48c-0.31-1.31-0.15-2.56,0.3-3.78
+		c0.57-1.56,1.3-3.05,1.95-4.58c0.33-0.77,0.59-1.56,0.63-2.42c0.03-0.59-0.19-1.06-0.6-1.44c-0.93-0.85-1.88-1.69-2.97-2.3
+		c-0.71-0.39-1.5-0.75-2.37-0.74c-0.3,0-0.54,0.12-0.8,0.26c-0.89,0.47-1.65,1.13-2.5,1.65c-0.96,0.58-2.03,0.89-3.13,1.04
+		c-0.77,0.1-1.51-0.16-2.26-0.31c-2.49-0.49-4.97-1.12-7.55-0.93c-1.05,0.07-2.08,0.22-3.11,0.42c-1.29,0.25-2.6,0.39-3.85,0.85
+		c-0.74,0.27-1.49,0.53-2.23,0.83c-0.97,0.4-1.91,0.85-2.77,1.45c-0.93,0.64-1.9,1.23-2.63,2.14c-0.4,0.5-0.91,0.91-1.27,1.45
+		c-0.63,0.96-1.33,1.89-1.77,2.95c-0.64,1.53-1.32,3.04-1.73,4.65c-0.46,1.82-0.72,3.66-0.79,5.53c-0.05,1.3,0.2,2.58,0.48,3.85
+		c0.44,2.01,1.37,3.85,1.76,5.87c0.2,1.04,0.36,2.08,0.56,3.12c0.34,1.76,0.65,3.52,1.18,5.24c0.41,1.34,1.06,2.55,1.67,3.8
+		c0.51,1.04,1.21,1.92,1.82,2.87c1.07,1.68,2.48,3.07,4.25,3.94c1.85,0.91,3.86,1.18,5.94,0.97c1.38-0.14,2.73-0.42,4.03-0.83
+		c1.72-0.54,3.27-1.43,4.36-2.94c1.58-2.19,2.25-4.65,2.03-7.31c-0.12-1.42-0.54-2.78-1.22-4.05c-0.16-0.3-0.24-0.64-0.43-0.93
+		c-0.67-1.05-1.49-1.97-2.64-2.49c-0.85-0.38-1.77-0.59-2.68-0.74c-1.27-0.22-2.55-0.35-3.81-0.57c-1.17-0.2-2.31-0.49-3.42-0.9
+		c-1-0.36-1.9-0.99-2.61-1.72c-1.22-1.25-2.07-2.71-2.1-4.6c-0.04-3.02,1.08-5.5,3.2-7.53c1.09-1.04,2.43-1.74,3.92-2.19
+		c2.24-0.67,4.45-0.52,6.69-0.06c1.18,0.24,2.26,0.66,3.32,1.19c0.4,0.2,0.71,0.5,1.05,0.77c0.3,0.24,0.32,0.76,0.09,1.11
+		c-0.24,0.37-0.67,0.53-1.05,0.35c-0.28-0.13-0.54-0.31-0.81-0.49c-1.2-0.78-2.56-1.05-3.93-1.29c-1.67-0.28-3.31-0.25-4.96,0.26
+		c-1.37,0.42-2.57,1.12-3.47,2.13c-1.26,1.4-2.11,3.05-2.17,5.04c-0.03,1.16,0.1,2.26,0.85,3.17c0.87,1.06,1.88,1.93,3.27,2.3
+		c0.98,0.26,1.95,0.56,2.96,0.71c0.75,0.12,1.51,0.23,2.26,0.32c1.04,0.13,2.04,0.41,3.06,0.64c1.25,0.29,2.22,0.96,3.1,1.79
+		c0.88,0.83,1.58,1.81,2.01,2.97c0.27,0.73,0.62,1.42,0.85,2.17c0.64,2.09,0.7,4.2,0.23,6.33c-0.3,1.36-0.79,2.64-1.48,3.83
+		c-1.02,1.76-2.5,3.02-4.35,3.86c-2.12,0.96-4.35,1.45-6.68,1.57c-1.77,0.09-3.48-0.13-5.16-0.73c-1.09-0.39-2-1.02-2.94-1.67
+		c-1.26-0.87-2.17-2.05-3.06-3.24c-0.64-0.85-1.25-1.73-1.74-2.66c-0.67-1.27-1.41-2.52-1.82-3.89c-0.44-1.5-0.91-2.99-1.13-4.55
+		c-0.18-1.28-0.53-2.54-0.73-3.83c-0.29-1.94-1.08-3.73-1.63-5.58c-0.39-1.32-0.71-2.69-0.76-4.09c-0.08-2.06,0.16-4.09,0.55-6.11
+		c0.32-1.63,0.94-3.14,1.5-4.68c0.49-1.33,1.22-2.52,1.9-3.74c0.55-1,1.29-1.86,2.04-2.65c0.74-0.78,1.55-1.55,2.53-2.11
+		c0.87-0.49,1.69-1.09,2.59-1.53c0.69-0.34,1.43-0.59,2.16-0.86c1.02-0.37,2.07-0.67,3.12-0.96c0.63-0.17,1.27-0.16,1.9-0.29
+		c1.19-0.24,2.39-0.39,3.6-0.49c1.25-0.1,2.47-0.01,3.71,0.16c1.19,0.16,2.35,0.45,3.53,0.62c0.46,0.06,0.91,0.18,1.35,0.3
+		c0.73,0.2,1.44,0.13,2.16-0.09c1.08-0.32,1.99-0.95,2.87-1.62c1.37-1.04,2.79-1.44,4.48-0.78c1.12,0.43,2.1,1.05,3.06,1.74
+		c0.81,0.58,1.51,1.26,2.19,1.98c0.69,0.74,0.89,1.64,0.78,2.61c-0.16,1.43-0.7,2.74-1.27,4.04c-0.52,1.19-1.13,2.34-1.51,3.59
+		c-0.3,0.97-0.3,1.93-0.01,2.91c0.32,1.08,0.81,2.1,1.09,3.18c0.44,1.69,0.97,3.35,1.35,5.06c0.45,1.99,0.66,4.01,0.91,6.01
+		c0.23,1.84,0.29,3.69,0.1,5.55c-0.14,1.4-0.29,2.79-0.44,4.19c-0.23,2.24-0.75,4.41-1.49,6.53c-0.32,0.93-0.53,1.9-0.97,2.79
+		c-0.6,1.23-1.14,2.5-1.87,3.67c-1.22,1.97-2.59,3.84-4.16,5.55c-1.09,1.2-2.24,2.36-3.35,3.55c-0.87,0.94-1.66,1.95-2.34,3.04
+		c-0.36,0.58-0.89,1-1.35,1.5c-1.15,1.26-2.59,2.13-4.15,2.75c-0.95,0.38-1.99,0.53-3.01,0.67c-0.47,0.07-0.95,0.11-1.43,0.16
+		c-0.54,0.06-1.02-0.29-1.1-0.78c-0.07-0.46,0.33-0.95,0.85-1.04C76.33,111.69,77.22,111.63,78.11,111.41z"/>
+</g>
+</svg>
+
+    </div>
+    <div class="sinzo">Sinzo</div>
+    <div class="menu">
+      <a href="gallery.html" onclick="triggerRipple(event)">Gallery</a>
+      <a href="work.html" onclick="triggerRipple(event)">Work</a>
+      <a href="sns.html" onclick="triggerRipple(event)">SNS</a>
+      <a href="contact.html" onclick="triggerRipple(event)">Contact</a>
+    </div>
+  </div>
+  <script>
+    function triggerRipple(e) {
+      e.preventDefault();
+      const link = e.target;
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple';
+      ripple.style.left = (e.clientX - 10) + 'px';
+      ripple.style.top = (e.clientY - 10) + 'px';
+      ripple.style.width = ripple.style.height = '20px';
+      document.body.appendChild(ripple);
+      setTimeout(() => {
+        window.location = link.href;
+      }, 1500);
+    }
+  </script>
+
+  <script>
+    // メニューが出る約4秒後に心音を停止
+    setTimeout(() => {
+      const audio = document.getElementById('heartbeatAudio');
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }, 4000);
+  </script>
+
+  <audio id="heartbeatAudio" autoplay>
+    <source src="heartbeat_real_fade.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    setTimeout(() => {
+      const audio = document.getElementById('heartbeatAudio');
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    }, 4000);
+  </script>
+  <!-- Heartbeat sound by Speedenza – freesound.org (CC BY 4.0) -->
+</body>
+
+
+</html>

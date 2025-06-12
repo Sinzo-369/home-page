@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', serif;
+      background: radial-gradient(circle, #fffde7 0%, #f5df4d 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    #modal {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    #modal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      transition: all 0.5s ease;
+    }
+    #modal.show {
+      display: flex;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" style="position: absolute; top: 20px; left: 20px; text-decoration: none; font-size: 1rem; color: #333; background: #fff9c4; padding: 6px 12px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">Home</a>
+  <h1>Gallery</h1>
+  <div class="gallery">
+    <img src="名称未設定のアートワーク 3.jpg" alt="art1" onclick="showModal(this.src)" />
+    <img src="名称未設定のアートワーク 2.jpg" alt="art2" onclick="showModal(this.src)" />
+    <img src="名称未設定のアートワーク.jpg" alt="art3" onclick="showModal(this.src)" />
+  </div>
+
+  <div id="modal" onclick="hideModal()">
+    <img id="modal-img" src="" />
+  </div>
+
+  <script>
+    function showModal(src) {
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modal-img');
+      modalImg.src = src;
+      modal.classList.add('show');
+    }
+    function hideModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('show');
+    }
+  </script>
+</body>
+</html>
